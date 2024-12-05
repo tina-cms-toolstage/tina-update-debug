@@ -1,0 +1,692 @@
+fragment GlobalSettingsParts on GlobalSettings {
+  __typename
+  siteInformation {
+    __typename
+    siteName
+    siteUrl
+    logo
+    contactData {
+      __typename
+      street
+      streetNo
+      postalCode
+      city
+      email {
+        __typename
+        linkText
+        linkHref
+        linkType
+        linkTarget
+      }
+      phone {
+        __typename
+        linkText
+        linkHref
+        linkType
+        linkTarget
+      }
+      mobile {
+        __typename
+        linkText
+        linkHref
+        linkType
+        linkTarget
+      }
+      fax
+    }
+    socialLinks {
+      __typename
+      iconStyle
+      facebook {
+        __typename
+        linkText
+        linkHref
+        linkType
+        linkTarget
+      }
+      x {
+        __typename
+        linkText
+        linkHref
+        linkType
+        linkTarget
+      }
+      threads {
+        __typename
+        linkText
+        linkHref
+        linkType
+        linkTarget
+      }
+      instagram {
+        __typename
+        linkText
+        linkHref
+        linkType
+        linkTarget
+      }
+      youtube {
+        __typename
+        linkText
+        linkHref
+        linkType
+        linkTarget
+      }
+      linkedIn {
+        __typename
+        linkText
+        linkHref
+        linkType
+        linkTarget
+      }
+      xing {
+        __typename
+        linkText
+        linkHref
+        linkType
+        linkTarget
+      }
+    }
+  }
+  SlideInMenu {
+    __typename
+    position
+  }
+  globalSeo {
+    __typename
+    metaDescription
+    metaKeywords {
+      __typename
+      metaKeywordList
+    }
+    robots {
+      __typename
+      index
+      follow
+      imageindex
+    }
+  }
+  globalLayout {
+    __typename
+    primaryColor
+    secondaryColor
+    additionalColors {
+      __typename
+      colorName
+      colorValue
+    }
+    headingColor
+    bodyColor
+    advancedBackgrounds {
+      __typename
+      advancedBackgroundName
+      advancedBackgroundLayers {
+        __typename
+        ... on GlobalSettingsGlobalLayoutAdvancedBackgroundsAdvancedBackgroundLayersColorLayerTemplate {
+          colorLayer
+        }
+        ... on GlobalSettingsGlobalLayoutAdvancedBackgroundsAdvancedBackgroundLayersImageLayerTemplate {
+          image
+          bgPos
+          bgPosStr
+          bgRep
+        }
+      }
+    }
+    textStyleSets {
+      __typename
+      name
+      headingColor
+      bodyColor
+    }
+    buttonStyleSets {
+      __typename
+      name
+      backgroundColor
+      backgroundColorHover
+      borderColor
+      borderColorHover
+      borderWidth
+      textColor
+      textColorHover
+    }
+    twSafeList {
+      __typename
+      safeListClasses
+    }
+  }
+  mailConfiguration {
+    __typename
+    logo
+    contactRecipients
+    senderName
+    senderAddress
+    replyAddress
+  }
+  legalTexts {
+    __typename
+    imprint {
+      __typename
+      imprintFetch
+      imprintAdditionalText
+    }
+    privacyPolicy {
+      __typename
+      privacyPolicyFetch
+      privacyPolicyAdditionalText
+    }
+  }
+  siteFooter {
+    __typename
+    logo
+  }
+}
+
+fragment NavigationParts on Navigation {
+  __typename
+  title
+  menu {
+    __typename
+    linkText
+    linkHref
+    linkType
+    linkTarget
+    submenu {
+      __typename
+      linkText
+      linkHref
+      linkType
+      linkTarget
+    }
+  }
+}
+
+fragment PageParts on Page {
+  __typename
+  draft
+  title
+  main {
+    __typename
+    ... on PageMainSection {
+      draft
+      name
+      backgroundColor
+      blocks {
+        __typename
+        ... on PageMainSectionBlocksHeroTextImageBlock {
+          draft
+          textColorSheme
+          title
+          subtitle
+          introtext
+          cta {
+            __typename
+            ... on PageMainSectionBlocksHeroTextImageBlockCtaButton {
+              linkText
+              linkHref
+              linkType
+              linkTarget
+              faIcon
+              colorScheme
+              size
+            }
+          }
+          src
+          alt
+          advancedImageOptions {
+            __typename
+            priority
+            format {
+              __typename
+              fill
+              aspectRatio
+              gravity
+            }
+            effects {
+              __typename
+              autoColor
+              autoContrast
+              autoBrightness
+              improve
+              sharpen
+              gamma
+              redeye
+              grayscale
+              sepia
+              art
+            }
+          }
+          advancedBlockOptions {
+            __typename
+            ordering
+            textAlign
+            imageAlign
+            wrapperTag
+            headerTag
+            overrideTitleStyle
+            subtitleTag
+            overrideSubTitleStyle
+          }
+        }
+        ... on PageMainSectionBlocksIntroTextBlock {
+          draft
+          textColorSheme
+          title
+          subtitle
+          introtext
+          cta {
+            __typename
+            ... on PageMainSectionBlocksIntroTextBlockCtaButton {
+              linkText
+              linkHref
+              linkType
+              linkTarget
+              faIcon
+              colorScheme
+              size
+            }
+          }
+          advancedBlockOptions {
+            __typename
+            wrapperTag
+            headerTag
+            overrideTitleStyle
+            subtitleTag
+            maxWidth
+          }
+        }
+        ... on PageMainSectionBlocksSbsImageTextBlock {
+          draft
+          textColorSheme
+          title
+          subtitle
+          text
+          cta {
+            __typename
+            ... on PageMainSectionBlocksSbsImageTextBlockCtaButton {
+              linkText
+              linkHref
+              linkType
+              linkTarget
+              faIcon
+              colorScheme
+              size
+            }
+          }
+          src
+          alt
+          advancedImageOptions {
+            __typename
+            priority
+            format {
+              __typename
+              fill
+              aspectRatio
+              gravity
+            }
+            effects {
+              __typename
+              autoColor
+              autoContrast
+              autoBrightness
+              improve
+              sharpen
+              gamma
+              redeye
+              grayscale
+              sepia
+              art
+            }
+            generative {
+              __typename
+              genRemove {
+                __typename
+                items
+                multiple
+                shadow
+                execute
+              }
+              genRecolor {
+                __typename
+                items
+                to
+                multiple
+                execute
+              }
+              genReplace {
+                __typename
+                from
+                to
+                preserveGeometry
+                execute
+              }
+              genFill
+              genRestore
+            }
+          }
+          advancedBlockOptions {
+            __typename
+            ordering
+            centerTextMobile
+            textAlign
+            imageAlign
+            wrapperTag
+            headerTag
+            overrideTitleStyle
+            subtitleTag
+          }
+        }
+        ... on PageMainSectionBlocksCardListBlock {
+          draft
+          name
+          cards {
+            __typename
+            ... on PageMainSectionBlocksCardListBlockCardsImageTextCard {
+              draft
+              title
+              introtext
+              textCenter
+              cta {
+                __typename
+                ... on PageMainSectionBlocksCardListBlockCardsImageTextCardCtaButton {
+                  linkText
+                  linkHref
+                  linkType
+                  linkTarget
+                  faIcon
+                  colorScheme
+                  size
+                }
+              }
+              backgroundColor
+              textColorSheme
+              src
+              alt
+              advancedImageOptions {
+                __typename
+                priority
+                format {
+                  __typename
+                  fill
+                  aspectRatio
+                  gravity
+                }
+                effects {
+                  __typename
+                  autoColor
+                  autoContrast
+                  autoBrightness
+                  improve
+                  sharpen
+                  gamma
+                  redeye
+                  grayscale
+                  sepia
+                  art
+                }
+              }
+              advancedCardOptions {
+                __typename
+                headerTag
+                wrapperTag
+                cssClass
+              }
+            }
+            ... on PageMainSectionBlocksCardListBlockCardsIconTextCard {
+              draft
+              faIcon
+              title
+              introtext
+              cta {
+                __typename
+                ... on PageMainSectionBlocksCardListBlockCardsIconTextCardCtaButton {
+                  linkText
+                  linkHref
+                  linkType
+                  linkTarget
+                  faIcon
+                  colorScheme
+                  size
+                }
+              }
+              backgroundColor
+              textColorSheme
+              advancedCardOptions {
+                __typename
+                headerTag
+                wrapperTag
+                cssClass
+                iconPosition
+              }
+            }
+            ... on PageMainSectionBlocksCardListBlockCardsStepTextCard {
+              draft
+              stepNo
+              title
+              introtext
+              cta {
+                __typename
+                ... on PageMainSectionBlocksCardListBlockCardsStepTextCardCtaButton {
+                  linkText
+                  linkHref
+                  linkType
+                  linkTarget
+                  faIcon
+                  colorScheme
+                  size
+                }
+              }
+              backgroundColor
+              textColorSheme
+              advancedCardOptions {
+                __typename
+                headerTag
+                wrapperTag
+                cssClass
+                iconPosition
+              }
+            }
+          }
+          advancedBlockOptions {
+            __typename
+            cardAlign
+            columnsMobile
+            columnsTablet
+            columnsDesktop
+            gap
+            cssClass
+          }
+        }
+        ... on PageMainSectionBlocksTextBlock {
+          draft
+          textColorSheme
+          title
+          text
+          advancedBlockOptions {
+            __typename
+            wrapperTag
+            headerTag
+            overrideTitleStyle
+          }
+        }
+        ... on PageMainSectionBlocksImageBlock {
+          draft
+          src
+          alt
+          advancedImageOptions {
+            __typename
+            priority
+            format {
+              __typename
+              fill
+              aspectRatio
+              gravity
+            }
+            effects {
+              __typename
+              autoColor
+              autoContrast
+              autoBrightness
+              improve
+              sharpen
+              gamma
+              redeye
+              grayscale
+              sepia
+              art
+            }
+            generative {
+              __typename
+              genRemove {
+                __typename
+                items
+                multiple
+                shadow
+                execute
+              }
+              genRecolor {
+                __typename
+                items
+                to
+                multiple
+                execute
+              }
+              genReplace {
+                __typename
+                from
+                to
+                preserveGeometry
+                execute
+              }
+              genFill
+              genRestore
+            }
+          }
+        }
+        ... on PageMainSectionBlocksTestimonialCarouselBlock {
+          draft
+          name
+          textColorSheme
+          testimonials {
+            __typename
+            title
+            testimonial {
+              ... on Testimonial {
+                __typename
+                draft
+                name
+                company
+                text
+                avatar
+                logo
+                createdAt
+                lastModified
+              }
+              ... on Document {
+                _sys {
+                  filename
+                  basename
+                  hasReferences
+                  breadcrumbs
+                  path
+                  relativePath
+                  extension
+                }
+                id
+              }
+            }
+          }
+          advancedBlockOptions {
+            __typename
+            cardAlign
+            columnsMobile
+            columnsTablet
+            columnsDesktop
+            gap
+            cssClass
+            emblaOptions {
+              __typename
+              loop
+              slidesToScroll
+              duration
+              containScroll
+              dragFree
+              controls {
+                __typename
+                ctrlColorScheme
+                ctrlPrevNext
+                ctrlDotNav
+                ctrlStartStop
+                ctrlSizing
+              }
+              automation
+              autoplay {
+                __typename
+                playOnInit
+                delay
+                stopOnInteraction
+                stopOnMouseEnter
+                stopOnFocusIn
+                stopOnLastSnap
+              }
+              autoscroll {
+                __typename
+                playOnInit
+                speed
+                startDelay
+                stopOnInteraction
+                stopOnMouseEnter
+                stopOnFocusIn
+              }
+            }
+          }
+        }
+      }
+      advancedSectionOptions {
+        __typename
+        sizing
+        wrapperTag
+        paddings {
+          __typename
+          paddingTop
+          paddingTopMobile
+          paddingBottom
+          paddingBottomMobile
+          paddingBlocks
+          paddingBlocksMobile
+        }
+        cssClass
+        cssId
+      }
+    }
+  }
+  seo {
+    __typename
+    metaTitle
+    metaDescription
+    metaKeywords {
+      __typename
+      metaKeywordList
+    }
+  }
+  socialSharingOptions {
+    __typename
+    title
+    description
+    image
+  }
+  createdAt
+  lastModified
+}
+
+fragment TestimonialParts on Testimonial {
+  __typename
+  draft
+  name
+  company
+  text
+  avatar
+  logo
+  createdAt
+  lastModified
+}

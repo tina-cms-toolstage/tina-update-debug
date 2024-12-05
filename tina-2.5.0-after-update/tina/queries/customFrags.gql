@@ -1,0 +1,39 @@
+fragment GlobalSettingsFragment on Query {
+  globalSettings(relativePath: "global-settings.json") {
+    ...GlobalSettingsParts
+  }
+}
+
+fragment MainMenuDataFragment on Query {
+  siteHeaderNav: navigation(relativePath: "main-menu.json") {
+    ... on Document {
+      _sys {
+        filename
+        basename
+        breadcrumbs
+        path
+        relativePath
+        extension
+      }
+      id
+    }
+    ...NavigationParts
+  }
+}
+
+fragment FooterMenuDataFragment on Query {
+  siteFooterNav: navigation(relativePath: "footer-menu.json") {
+    ... on Document {
+      _sys {
+        filename
+        basename
+        breadcrumbs
+        path
+        relativePath
+        extension
+      }
+      id
+    }
+    ...NavigationParts
+  }
+}

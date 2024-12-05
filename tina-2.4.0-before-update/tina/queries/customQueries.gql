@@ -1,0 +1,50 @@
+query globalData {
+  ...GlobalSettingsFragment
+}
+query siteHeaderData {
+  ...MainMenuDataFragment
+  ...GlobalSettingsFragment
+}
+
+query siteFooterData {
+  ...FooterMenuDataFragment
+  ...GlobalSettingsFragment
+}
+
+query pageData($relativePath: String!) {
+  page(relativePath: $relativePath) {
+    ... on Document {
+      _sys {
+        filename
+        basename
+        breadcrumbs
+        path
+        relativePath
+        extension
+      }
+      id
+    }
+    ...PageParts
+  }
+}
+
+query sitemapData {
+  globalSettings(relativePath: "global-settings.json") {
+    siteInformation {
+      siteUrl
+    }
+  }
+  pageConnection(filter: { draft: { eq: false } }) {
+    edges {
+      node {
+        title
+        id
+        lastModified
+        _sys {
+          filename
+          breadcrumbs
+        }
+      }
+    }
+  }
+}
